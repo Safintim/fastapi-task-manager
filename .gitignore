@@ -139,3 +139,5 @@ cython_debug/
 
 #Editors
 .vscode
+
+*.sqlite3

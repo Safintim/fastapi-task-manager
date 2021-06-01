@@ -7,6 +7,9 @@ authors = ["Safintim <timurtlt96@mail.ru>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 fastapi = {extras = ["all"], version = "^0.65.1"}
+pydantic = "^1.8.2"
+python-dotenv = "^0.17.1"
+SQLAlchemy = "^1.4.17"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

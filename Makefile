@@ -21,4 +21,10 @@ check: selfcheck test lint
 build: check
 	poetry build
 
-.PHONY: install test lint selfcheck check build
+formatter:
+	poetry run autopep8 --recursive --in-place --aggressive --aggressive .
+
+init-db:
+	poetry run python -m fastapi_task_manager.tables
+
+.PHONY: install test lint selfcheck check build formatter
