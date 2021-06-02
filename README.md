@@ -2,7 +2,7 @@
 
 # Менеджер задач
 
-API [менеджера задач](https://python-l4-task-manager.herokuapp.com/), разработанный на fastapi.
+API [менеджера задач](https://python-l4-task-manager.herokuapp.com/), разработанный на fastapi. Проект создан для знакомства с fastapi.
 
 
 ## Как установить
@@ -15,12 +15,29 @@ make test # проверить код
 make init-db # создание таблиц
 ```
 
+## Запуск
+
+```bash
+make start
+```
+
+
 ## Переменные окружения
 
 Создать файл _.env_ в корне проекта
 
  - SERVER_HOST
  - SERVER_PORT
+ - JWT_SECRET
+
+
+## Генерация JWT_SECRET
+
+```python
+from secrets import token_urlsafe
+
+print(token_urlsafe(32)) # example AZbryYuns5177lCUzmGgnckYrU9g2oXaJwfsCRg622U
+```
 
 
 ### Статус

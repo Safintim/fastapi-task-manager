@@ -6,6 +6,10 @@ class Settings(BaseSettings):
     server_port: int = 5000
     database_url: str = 'sqlite:///./database.sqlite3'
 
+    jwt_secret: str
+    jwt_algorithm: str = 'HS256'
+    jwt_expiration: int = 3600  # seconds
+
 
 settings = Settings(
     _env_file='.env',

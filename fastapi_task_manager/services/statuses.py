@@ -1,10 +1,10 @@
-from fastapi_task_manager.models.statuses import StatusCreate
 from fastapi import Depends, HTTPException
 from fastapi import status as fastapi_status
 from sqlalchemy.orm import Session
 
 from fastapi_task_manager import tables
 from fastapi_task_manager.database import get_session
+from fastapi_task_manager.models.statuses import StatusCreate
 
 
 class StatusesService:
