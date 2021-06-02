@@ -1,6 +1,7 @@
-from fastapi_task_manager.settings import settings
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+
+from fastapi_task_manager.settings import settings
 
 engine = create_engine(
     settings.database_url,
@@ -9,4 +10,14 @@ engine = create_engine(
 
 Session = sessionmaker(
     engine,
+    autocommit=False,
+    autoflush=False,
 )
+
+
+def get_session() -> Session:
+    session = Session()
+    try:
+        yield session
+    finally:
+        session.close()

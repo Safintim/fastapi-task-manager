@@ -1,4 +1,5 @@
 import uvicorn
+
 from fastapi_task_manager.settings import settings
 
 uvicorn.run(

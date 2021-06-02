@@ -1,9 +1,23 @@
-from datetime import datetime
+import datetime
 
 from pydantic import BaseModel
 
 
-class Label(BaseModel):
-    id: int
+class LabelBase(BaseModel):
     title: str
-    created_at: datetime
+
+
+class Label(LabelBase):
+    id: int
+    created_at: datetime.datetime
+
+    class Config:
+        orm_mode = True
+
+
+class LabelCreate(LabelBase):
+    """Label Create"""
+
+
+class LabelUpdate(LabelBase):
+    """Label Update"""
